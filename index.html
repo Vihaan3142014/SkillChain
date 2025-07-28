@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skill Chain - Learn and Teach Real Skills</title>
+  <style>
+    /* Simple reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      text-align: center;
+      background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: -1;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 6px #000;
+    }
+
+    p.description {
+      font-size: 1.4rem;
+      max-width: 700px;
+      margin-bottom: 40px;
+      line-height: 1.5;
+      text-shadow: 1px 1px 5px #000;
+    }
+
+    .btn {
+      background-color: #FF6600;
+      padding: 15px 35px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      cursor: pointer;
+      color: white;
+      box-shadow: 0 5px 10px rgba(255, 102, 0, 0.6);
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #e65c00;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <h1>Welcome to Skill Chain</h1>
+  <p class="description">
+    Skill Chain is an online learning community where people of all ages can teach and learn real-world skills through easy-to-follow videos and articles. 
+    It’s a safe and fun platform that connects teachers and learners, encouraging sharing knowledge in areas like music, chess, coding, science, and more. 
+    With a simple reward system, users earn digital gems when others complete their lessons, making learning motivating and rewarding. 
+    Skill Chain aims to build a supportive space where everyone grows their talents and shares what they know!
+  </p>
+
+  <a href="#" class="btn">Sign Up / Log In</a>
+</body>
+</html>
