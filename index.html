@@ -79,3 +79,39 @@
   <a href="signup.html" class="btn">Sign Up / Log In</a>
 </body>
 </html>
+
+
+<!-- Trigger Button -->
+<button onclick="toggleForm()">Sign Up / Log In</button>
+
+<!-- Hidden Form -->
+<div id="formPopup" style="display:none; position:fixed; top:20%; left:30%; background:white; border:2px solid black; padding:20px;">
+  <h2>Sign Up / Log In</h2>
+  <form>
+    <label for="username">Username:</label><br>
+    <input type="text" id="username"><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email"><br><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="password"><br><br>
+
+    <button type="submit">Submit</button>
+    <button type="button" onclick="toggleForm()">Close</button>
+  </form>
+</div>
+
+
+
+
+<script>
+  function toggleForm() {
+    const form = document.getElementById("formPopup");
+    if (form.style.display === "none") {
+      form.style.display = "block";
+    } else {
+      form.style.display = "none";
+    }
+  }
+</script>
