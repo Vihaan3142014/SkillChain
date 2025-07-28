@@ -1,130 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>SkillChain - Learn. Earn. Grow!</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skill Chain</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
-      color: #333;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images.unsplash.com/photo-1601582585345-c2631e0d3b8e') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
       text-align: center;
     }
 
-    header {
-      background-color: #4a90e2;
-      color: white;
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       padding: 20px;
     }
 
     h1 {
-      margin-top: 20px;
-      font-size: 2.5rem;
+      font-size: 4em;
+      margin-bottom: 20px;
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1.5em;
       max-width: 800px;
-      margin: 20px auto;
-      line-height: 1.6;
+      margin: auto;
+      margin-bottom: 40px;
     }
 
-    #openPopup {
-      background-color: #4a90e2;
-      color: white;
+    .button {
+      background-color: #00bcd4;
       border: none;
       padding: 15px 30px;
-      font-size: 1rem;
-      cursor: pointer;
-      border-radius: 10px;
-    }
-
-    #popup {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(0, 0, 0, 0.6);
-      display: none;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #popup-content {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 400px;
-      text-align: left;
-    }
-
-    input {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-
-    .btn {
-      padding: 10px 20px;
-      margin: 10px 5px;
-      border: none;
+      font-size: 1.2em;
       border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s;
       cursor: pointer;
     }
 
-    .btn-primary {
-      background-color: #4a90e2;
-      color: white;
-    }
-
-    .btn-secondary {
-      background-color: #ccc;
+    .button:hover {
+      background-color: #008fa1;
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>SkillChain</h1>
-    <p>Where kids learn cool skills, earn gems, and grow together! SkillChain is the ultimate learning zone for future inventors, creators, and leaders. 💡🔥</p>
-    <button id="openPopup">Sign Up / Log In</button>
-  </header>
-
-  <div id="popup">
-    <div id="popup-content">
-      <h2>Sign Up / Log In</h2>
-      <input type="text" placeholder="Username" id="username">
-      <input type="password" placeholder="Password" id="password">
-      <button class="btn btn-primary" onclick="login()">Submit</button>
-      <button class="btn btn-secondary" onclick="closePopup()">Close</button>
-    </div>
+  <div class="overlay">
+    <h1>Skill Chain</h1>
+    <p>
+      Skill Chain is the ultimate platform where kids can create, learn, and grow by completing challenges, watching videos, and earning chains for their progress. Build your streak. Show your skills. Level up in learning!
+    </p>
+    <a href="login.html" class="button">Sign Up / Log In</a>
   </div>
-
-  <script>
-    const popup = document.getElementById("popup");
-    const openBtn = document.getElementById("openPopup");
-
-    openBtn.addEventListener("click", () => {
-      popup.style.display = "flex";
-    });
-
-    function closePopup() {
-      popup.style.display = "none";
-    }
-
-    function login() {
-      const username = document.getElementById("username").value;
-      alert("Welcome, " + username + "! 🎉 (Now take them to profile next!)");
-      closePopup();
-    }
-  </script>
-
 </body>
 </html>
