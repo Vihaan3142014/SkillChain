@@ -1,117 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Skill Chain - Learn and Teach Real Skills</title>
+  <meta charset="UTF-8">
+  <title>SkillChain - Learn. Earn. Grow!</title>
   <style>
-    /* Simple reset */
-    * {
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+      color: #333;
+      text-align: center;
     }
 
-    body, html {
-      height: 100%;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    header {
+      background-color: #4a90e2;
       color: white;
-      text-align: center;
-      background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       padding: 20px;
     }
 
-    .overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.6);
-      z-index: -1;
-    }
-
     h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 6px #000;
+      margin-top: 20px;
+      font-size: 2.5rem;
     }
 
-    p.description {
-      font-size: 1.4rem;
-      max-width: 700px;
-      margin-bottom: 40px;
-      line-height: 1.5;
-      text-shadow: 1px 1px 5px #000;
+    p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 20px auto;
+      line-height: 1.6;
+    }
+
+    #openPopup {
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+    #popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #popup-content {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 400px;
+      text-align: left;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
     }
 
     .btn {
-      background-color: #FF6600;
-      padding: 15px 35px;
+      padding: 10px 20px;
+      margin: 10px 5px;
       border: none;
-      border-radius: 30px;
-      font-size: 1.3rem;
-      font-weight: bold;
+      border-radius: 8px;
       cursor: pointer;
-      color: white;
-      box-shadow: 0 5px 10px rgba(255, 102, 0, 0.6);
-      transition: background-color 0.3s ease;
-      text-decoration: none;
     }
 
-    .btn:hover {
-      background-color: #e65c00;
+    .btn-primary {
+      background-color: #4a90e2;
+      color: white;
+    }
+
+    .btn-secondary {
+      background-color: #ccc;
     }
   </style>
 </head>
 <body>
-  <div class="overlay"></div>
 
-  <h1>Welcome to Skill Chain</h1>
-  <p class="description">
-    Skill Chain is an online learning community where people of all ages can teach and learn real-world skills through easy-to-follow videos and articles. 
-    It’s a safe and fun platform that connects teachers and learners, encouraging sharing knowledge in areas like music, chess, coding, science, and more. 
-    With a simple reward system, users earn digital gems when others complete their lessons, making learning motivating and rewarding. 
-    Skill Chain aims to build a supportive space where everyone grows their talents and shares what they know!
-  </p>
+  <header>
+    <h1>SkillChain</h1>
+    <p>Where kids learn cool skills, earn gems, and grow together! SkillChain is the ultimate learning zone for future inventors, creators, and leaders. 💡🔥</p>
+    <button id="openPopup">Sign Up / Log In</button>
+  </header>
 
- 
+  <div id="popup">
+    <div id="popup-content">
+      <h2>Sign Up / Log In</h2>
+      <input type="text" placeholder="Username" id="username">
+      <input type="password" placeholder="Password" id="password">
+      <button class="btn btn-primary" onclick="login()">Submit</button>
+      <button class="btn btn-secondary" onclick="closePopup()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    const popup = document.getElementById("popup");
+    const openBtn = document.getElementById("openPopup");
+
+    openBtn.addEventListener("click", () => {
+      popup.style.display = "flex";
+    });
+
+    function closePopup() {
+      popup.style.display = "none";
+    }
+
+    function login() {
+      const username = document.getElementById("username").value;
+      alert("Welcome, " + username + "! 🎉 (Now take them to profile next!)");
+      closePopup();
+    }
+  </script>
+
 </body>
 </html>
-
-
-<!-- Trigger Button -->
-<button onclick="toggleForm()">Sign Up / Log In</button>
-
-<!-- Hidden Form -->
-<div id="formPopup" style="display:none; position:fixed; top:20%; left:30%; background:white; border:2px solid black; padding:20px;">
-  <h2>Sign Up / Log In</h2>
-  <form>
-    <label for="username">Username:</label><br>
-    <input type="text" id="username"><br><br>
-
-    <label for="email">Email:</label><br>
-    <input type="email" id="email"><br><br>
-
-    <label for="password">Password:</label><br>
-    <input type="password" id="password"><br><br>
-
-    <button type="submit">Submit</button>
-    <button type="button" onclick="toggleForm()">Close</button>
-  </form>
-</div>
-
-
-
-
-<script>
-  function toggleForm() {
-    const form = document.getElementById("formPopup");
-    if (form.style.display === "none") {
-      form.style.display = "block";
-    } else {
-      form.style.display = "none";
-    }
-  }
-</script>
